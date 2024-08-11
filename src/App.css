@@ -24,4 +24,32 @@ body{
 
 .meme-form{
   display: grid;
+  grid-template: 40px 40px / 1fr 1fr;
+  gap: 20px;
+  padding: 70px;
+}
+
+.meme-form  label{
+  margin-top: 40px;
+  font-weight: bolder;  
+}
+
+.meme-form-input{
+  border: 1px solid #D5D4D8;
+  border-radius: 5px;
+  font-size: 15px;
+  text-indent: 5px;
+}
+
+.meme-form-btn {
+  grid-column: 1/-1;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #672280, #A626D3);
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: bold;
+  color: aliceblue;
+  padding: 8px;
+  cursor: pointer;
 }
