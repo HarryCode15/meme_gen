@@ -1,6 +1,6 @@
 import './App.css';
 import Titlebar from './components/TitleBar';
-import MemeInputs from './components/MemeInputs';
+import MemeInputs from './components/Meme';
 
 function App() {
   return (
