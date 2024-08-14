@@ -53,3 +53,15 @@ body{
   padding: 8px;
   cursor: pointer;
 }
+
+.meme-section{
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meme-section-image{
+  width: auto;
+  height: 50vh;
+}
