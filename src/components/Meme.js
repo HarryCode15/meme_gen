@@ -3,13 +3,20 @@ import MemeData from "../Data/MemeData";
 
 
 export default function MemeInputs(){
-    const [memeImg, setMemeImg] = useState('')
+    const [memeImg, setMemeImg] = useState({
+        topText:"",
+        bottomText:"",
+        randomImage:"/images/meme_pointer.png"
+    })
 
     function getTheMeme(){
         const memeArr = MemeData.data.memes
         const randomIndex = Math.floor(Math.random() * memeArr.length)
         const url = memeArr[randomIndex].url
-        setMemeImg(url)
+        setMemeImg(prevMeme => ({
+            ...prevMeme,
+            randomImage:url
+        }))
         
     }
 
@@ -26,7 +33,7 @@ export default function MemeInputs(){
                         Get new meme image 🖼
                     </button>
             <section className="meme-section">
-                <img src={memeImg} alt="Meme" className="meme-section-image" />
+                <img src={memeImg.randomImage} alt="Meme" className="meme-section-image" />
             </section>
         </main>
     )
