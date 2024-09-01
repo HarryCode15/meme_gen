@@ -20,12 +20,38 @@ export default function MemeInputs(){
         
     }
 
+    function handleChange(event){
+        const {name, value} = event.target
+        setMemeImg(prevMeme => ({
+            ...prevMeme,
+            [name]:value
+        }))
+    }
+
     return(
         <main className="meme-form">
-            <label>Top Text</label>
-            <label>Bottom Text</label>
-            <input type="text" placeholder="Enter top text here..." className="meme-form-input" />
-            <input type="text" placeholder="Enter bottom text here..." className="meme-form-input" />
+            <label htmlFor="top">Top Text</label>
+            <label htmlFor="bottom">Bottom Text</label>
+            <input 
+                id="top"
+                type="text" 
+                placeholder="Enter top text here..." 
+                className="meme-form-input" 
+                onChange={handleChange}
+                name="topText"
+                value={memeImg.topText}
+                />
+
+            <input 
+                id="bottom"
+                type="text" 
+                placeholder="Enter bottom text here..." 
+                className="meme-form-input" 
+                onChange={handleChange}
+                name="bottomText"
+                value={memeImg.bottomText}
+                />
+
             <button type="submit" 
                     className="meme-form-btn"
                     onClick={getTheMeme}
@@ -34,6 +60,8 @@ export default function MemeInputs(){
                     </button>
             <section className="meme-section">
                 <img src={memeImg.randomImage} alt="Meme" className="meme-section-image" />
+                <h2 className="meme-text top">{memeImg.topText}</h2>
+                <h2 className="meme-text bottom">{memeImg.bottomText}</h2>
             </section>
         </main>
     )
